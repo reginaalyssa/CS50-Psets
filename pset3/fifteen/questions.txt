@@ -1,0 +1,7 @@
+0. Other dimensions for the Game of Fifteen that the framework allows include 3 x 3, 5 x 5, 6 x 6, 7 x 7, 8 x 8, and 9 x 9. In code, the minimum and maximum allowed dimensions for the board in the game is set by DIM_MIN = 3 and DIM_MAX = 9.
+
+1. The board is represented as a 2D array as shown by line 27 in fifteen.c: "int board[DIM_MAX][DIM_MAX];"
+
+2. greet() is called to greet the player at the start of the game.
+
+3. The functions that still need to be implemented are init, draw, move, and won.
