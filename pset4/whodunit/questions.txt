@@ -1,0 +1,23 @@
+1.  stdint.h is a header file in C that provides integer types with defined specific or fixed widths. These include exact-width integer types, least-width integer types, fastest integer types, pointer integer types, and maximum-width integer types.
+
+2.  Using integer types such as uint8_t, uint32_t, int32_t, and uint16_t allows us to define a fixed width for the data types. This means we are able to write code that is more portable since across different machines, the implementation of the data type remains the same and would not produce unexpected behaviors. This also allows us to define the data type that is apt for the situation (i.e. allowing us more value representation if we would not need negative values by choosing the unsigned data type).
+
+3.  There is 1 byte in a BYTE, 4 bytes in a DWORD, 4 bytes in a LONG, and 2 bytes in a WORD.
+
+4.  The first two bytes of any BMP file in hexadecimal is 0x4d42.
+
+5.  The biSize shows the size of the info header only while bfSize pertains to the overall file size in bytes which is actually just the sum of the size of info header, the size of the image with padding, and the size of the file header.
+
+6.  Having a negative biHeight indicates that the bitmap's image scanline is stored from top to bottom.
+
+7.  biBitCount defines the number of bits per pixel, which is 24 bits in the case of clue.bmp.
+
+8.  fopen might return NULL in copy.c if the file is inaccessible perhaps due to permission issues or non-existent files, to name a few.
+
+9.  The third argument to fread is always 1 in our code because there is always only one element to read at a time. It read once for the entire file header, once for the entire bit header, and once every time for each RGB pixel in the image. This is made possible because the size of the elements to read are known beforehand.
+
+10. The value for padding is 3 if bi.biWidth is given a value of 3.
+
+11. fseek jumps to a position in the file according to its parameters. It takes in three arguments: the first is the file to perform the function on, the number of bytes to jump or move, and the position it will come from. In summary, it moves a certain number of bytes from a position within the file.
+
+12. SEEK_CUR may be the third argument passed on to fseek, defining the current position of the cursor in a given file.
