@@ -1,0 +1,21 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is the longest English word as stated in major English dictionaries. By definition, it is a disease of the lungs caused by inhalation of fine dust particles.
+
+1.  getrusage returns resource usage statistics of the calling process, its terminated child processes, or the calling thread. For speller.c, retrusage() makes use of RUSAGE_SELF which means that the resource usage measure of the calling process itself is being given.
+
+2.  There are 16 members in a variable of type struct rusage, two of which are of type struct timeval and the remaining 14 are of type long.
+
+3.  before and after are passed by reference to easily access its contents without having to make a copy or duplicate the struct (which happens if pass by value were used). Copying data done in pass by value costs more time (to copy the contents) and memory (to give space for the copy) to be used especially for large structs. In addition to this, the prototype of the function getrusage() as per the man pages states that the second argument must be a pointer to a struct as stated by "int getrusage(int who, struct rusage *usage);".
+
+4.  main reads words in the file per character. For every iteration:
+
+    It saves every alphabetical character or apostrophe (if apostrophe is not the first character) into the variable "word", which can be thought of as a string implemented by an array of characters. However, if the length of word exceeds 45 characters, it skips the entire alphabetical string and "resets" the string.
+
+    If it encounters a number, it will skip the entire alphanumeric string and reset the "word" variable by setting index to 0 (this will overwrite "word" on the next alphabetical character read). It can be thought of as a workaround equivalent of setting the variable "word" to an empty string.
+
+    If the character read is not an alphanumeric character nor an apostrophe, it assumes the end of the current "word" and will end the string by appending the terminating character '\0' at the end. The total number of read words is incremented and then, main checks if the word contained in the "word" variable is misspelled by invoking the check function. If word is misspelled, it displayed the word and adds 1 to the count of misspellings found then "resets" the string again in preparation for the next word.
+    
+    If character read is not an alphanumeric character nor an apostrophe but "word" is still empty (as determined by index = 0), main will simply read the next character/s until it encounters an alphabetic character which will then be the start of the next word.
+    
+5.  fgetc is easier to track since you know exactly where the file pointer is at each iteration while fscanf reads whole words and relies heavily on formatting. fscanf also depends on whitespace and reading a string such as for example an email address "example@example.com" would prove to be difficult to break down into "example", "example", and "com" unlike the current fgetc implementation which easily does this for us. This would cost extra space should you use another array to store each word separately then check each one. Using fscanf alone would make it harder to catch strings with digits and other characters that are not alphabetic or apostrophes since it does not scan per character.
+
+6.  The parameters for check and load were declared as const so as to avoid accidentally changing the value of the character. Since the character was passed to the function by reference, the function has the ability to manipulate or change its original value. But since check and load are not meant to modify the value in the first place, accidental modification can be prevented using const.
