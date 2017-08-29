@@ -45,6 +45,7 @@ The specifications of each problem set are linked below.
 [Hello]: <http://docs.cs50.net/problems/hello/hello.html>
 [Water]: <http://docs.cs50.net/problems/water/water.html>
 [Mario]: <http://docs.cs50.net/problems/mario/more/mario.html>
+[Credit]: <http://docs.cs50.net/problems/credit/credit.html>
 [Initials]: <http://docs.cs50.net/problems/initials/more/initials.html>
 [Caesar]: <http://docs.cs50.net/problems/caesar/caesar.html>
 [Vigenere]: <http://docs.cs50.net/problems/vigenere/vigenere.html>
