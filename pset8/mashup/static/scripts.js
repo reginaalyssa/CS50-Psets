@@ -104,7 +104,8 @@ function addMarker(place)
             
             // generate list items of articles
             for (var i = 0; i < data.length; i++) {
-                contentString += "<li><a href=\"" + data[i].link + ">" + data[i].title + '</a></li>';
+                link = data[i].link.replace(/"/g,"");
+                contentString += '<li><a href="' + link + '">' + data[i].title + '</a></li>';
             }
             
             // end unorderd list
