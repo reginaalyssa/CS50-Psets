@@ -35,9 +35,9 @@ db = SQL("sqlite:///finance.db")
 @login_required
 def index():
     # retrieve symbol, name, and shares of stock from db
-    rows = db.execute("""SELECT symbol, name, sum(shares) AS shares FROM transactions 
-        JOIN stocks on transactions.stock_id = stocks.id WHERE user_id = :id 
-        GROUP BY symbol""", id=session["user_id"])
+    rows = db.execute("""SELECT symbol, name, SUM(shares) AS shares FROM transactions
+        JOIN stocks on transactions.stock_id = stocks.id WHERE user_id = :id
+        GROUP BY symbol HAVING SUM(shares) != 0""", id=session["user_id"])
 
     grand_total = 0
     for row in rows:
