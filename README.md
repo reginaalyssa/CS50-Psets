@@ -35,7 +35,7 @@ The specifications of each problem set are linked below.
         - Vigenere (from Pset2)
     - [Sentiments]
 - Problem Set 7
-    - [C$50 Finance]
+    - [C$50 Finance] (Access my implementation of the web app at [ra-cs50-finance.herokuapp.com])
 - Problem Set 8
     - [Mashup]
 
@@ -59,3 +59,4 @@ The specifications of each problem set are linked below.
 [Sentiments]: <http://docs.cs50.net/problems/sentiments/sentiments.html>
 [C$50 Finance]: <http://docs.cs50.net/problems/finance/finance.html>
 [Mashup]: <http://docs.cs50.net/problems/mashup/mashup.html>
+[ra-cs50-finance.herokuapp.com]: <ra-cs50-finance.herokuapp.com>
